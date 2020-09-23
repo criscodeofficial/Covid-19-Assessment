@@ -1,0 +1,50 @@
+.btn-loading {
+  position: relative;
+  pointer-events: none;
+  color: transparent !important;
+
+  &:after {
+    animation: spinAround 500ms infinite linear;
+    border: 2px solid #dbdbdb;
+    border-radius: 50%;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    content: "";
+    display: block;
+    height: 1em;
+    width: 1em;
+    position: absolute;
+    left: calc(50% - (1em / 2));
+    top: calc(50% - (1em / 2));
+  }
+}
+
+.btn-a {
+  width: 250px;
+  padding: 5px;
+  border: none;
+  border-radius: 4px;
+  margin: 5px 0;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  outline: none;
+  background-color: #00cc44;
+  color: #fff;
+
+  &:hover {
+      opacity: 0.9;
+      text-decoration: none;
+      color: #fff;
+  }
+}
+
+
+
+
+
+@keyframes spinAround {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(359deg); }
+}
