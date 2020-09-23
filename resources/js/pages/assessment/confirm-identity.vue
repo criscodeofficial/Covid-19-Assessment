@@ -27,10 +27,6 @@
                         <v-button :loading="form.busy" class="btn btn-dark">
                             {{ $t('next') }}
                         </v-button>
-                        <router-link :to="{ name: 'assessment.form-1' }">
-                            {{ $t('next') }}
-                        </router-link>
-                    
                     </div>
                 </form>
                 

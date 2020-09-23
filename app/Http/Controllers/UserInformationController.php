@@ -66,7 +66,7 @@ class UserInformationController extends Controller
             $oldImage->delete();     
         };
 
-        // save image to the storage
+        // save image to the public
         $image = $request->file('images');
         $imageName = $image->getClientOriginalName();
         $imageName = time().'_'.$imageName;

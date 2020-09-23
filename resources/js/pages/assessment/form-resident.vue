@@ -69,9 +69,6 @@
                   <v-button :loading="form.busy" class="btn btn-dark">
                     {{ $t('submit') }}
                   </v-button>
-                  <router-link :to="{ name: 'assessment.confirm-identity' }">
-                    {{ $t('next') }}
-                  </router-link> 
                 </div> 
               </form>
             </div> 
