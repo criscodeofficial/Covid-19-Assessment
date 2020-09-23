@@ -15,7 +15,8 @@ class AssessmentSeeder extends Seeder
         Assessment::create([          
             'user_id' => 1,
             'assessment_id' => 1,
-            'questionaire_id' => 1,  
+            'questionaire_id' => 1,
+            'is_suspect' => 0,    
         ]);
     }
 }

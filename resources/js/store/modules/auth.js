@@ -65,6 +65,10 @@ export const mutations = {
     state.userInfo = userInfo
   },
 
+  [types.UPDATE_QUESTIONS] (state, { questions }) {
+    state.questions = questions
+  },
+
   [types.UPDATE_RESULT] (state, { assessmentResult }) {
     state.assessmentResult = assessmentResult
   },
@@ -130,6 +134,10 @@ export const actions = {
 
   updateUserInfo ({ commit }, payload) {
     commit(types.UPDATE_USERINFO, payload)
+  },
+
+  updateQuestions ({ commit }, payload) {
+    commit(types.UPDATE_QUESTIONS, payload)
   },
 
   updateAssessmentResult ({ commit }, payload) {

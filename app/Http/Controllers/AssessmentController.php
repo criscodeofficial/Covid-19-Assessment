@@ -22,13 +22,11 @@ class AssessmentController extends Controller
 
         // store assessment in db
         $assessment = Assessment::create([     
-
+            
             'user_id' => auth()->user()->id,
             'assessment_id' => auth()->user()->id,
             'questionaire_id' => $request['formData.fieldQuestionaire'],
-            'is_suspect' => $request['formData.is_suspect'],
-            'question_id' => $request['formData.fieldQuestion'],      
-    
+            'is_suspect' => $request['formData.is_suspect'],      
         ]);
         
         // store assessment response in db

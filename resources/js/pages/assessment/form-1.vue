@@ -1,9 +1,8 @@
 <template>
     <card>
         <div class="card-header">Fields marked with an <span class="color-red">*</span> are required.</div>
-        <div class="row justify-content-center">
+        <div class="row justify-content-center" v-if="questions.length">
             <div class="col-md-11">
-                
                 <div class="card-body">
                     <div class="alert alert-danger errors d-flex h-100" v-if=" errors ">
                         <p class="mb-0" v-for="(fieldsError, fieldName) in errors" :key="fieldName">{{ fieldsError[0] }}</p>
@@ -24,10 +23,10 @@
                                                 :name="index" 
                                                 :value="answer.answer"
                                                 ref="mgAnswer"
-
                                                 @change="
                                                 choices(answer.id, quest.id, quest.questionaire_id, index, quest.answers)"
                                                 class="mr-2">
+
                                                 <!-- Seleting questions with type of checkbox--> 
                                                 <input v-else
                                                 v-model="form.fieldAnswer" 
@@ -35,7 +34,6 @@
                                                 :name="index" 
                                                 :value="answer.answer"
                                                 ref="mgAnswer"
-                                                
                                                 @change="
                                                 choices(answer.id , quest.id, quest.questionaire_id, index, quest.answers)"
                                                 class="mr-2">
@@ -115,6 +113,14 @@ export default {
         errors: null,
         results: []
     }),
+
+    mounted() {
+        if (this.questions.length) {
+            return;
+        }
+        
+        this.$store.dispatch('auth/fetchQuestions');
+    },
 
     computed: mapGetters({
         questions: 'auth/questions',
@@ -216,5 +222,8 @@ export default {
 <style lang="scss">
     .color-red {
         color: red;
+    }
+    input[type="radio"], input[type="checkbox"] {
+        cursor: pointer;
     }
 </style>

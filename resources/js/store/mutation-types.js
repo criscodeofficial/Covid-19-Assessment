@@ -11,6 +11,7 @@ export const UPDATE_USERINFO = 'UPDATE_USERINFO'
 
 // questinaire
 export const FETCH_QUESTIONS = 'FETCH_QUESTIONS'
+export const UPDATE_QUESTIONS = 'UPDATE_QUESTIONS'
 
 // result
 export const FETCH_RESULT = 'FETCH_RESULT'

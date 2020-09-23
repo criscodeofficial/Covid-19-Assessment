@@ -18,6 +18,7 @@ class CreateAssessmentsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('assessment_id');
             $table->unsignedBigInteger('questionaire_id');
+            $table->boolean('is_suspect');
             $table->timestamps();
         });
     }
